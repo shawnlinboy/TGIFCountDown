@@ -1,6 +1,5 @@
 package me.linshen.tgif.util
 
-import me.linshen.tgif.TGIFAppWidgetProvider
 import java.util.*
 
 object CalendarUtils {
