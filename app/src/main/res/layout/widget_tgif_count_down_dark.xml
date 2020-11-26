@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@android:id/background"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/widget_style_4_1_height"
+    android:background="@drawable/widget_bg_dark"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_style_dark_circle" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/widget_style_4_1_dark_title_margin_start"
+        android:layout_marginLeft="@dimen/widget_style_4_1_dark_title_margin_start"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/is_today_friday"
+            android:textColor="#008385"
+            android:textSize="13.33sp" />
+
+        <TextView
+            android:id="@android:id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:includeFontPadding="false"
+            android:text="@string/is_today_friday"
+            android:textColor="#00D0D1"
+            android:textSize="33.33sp"
+            android:textStyle="bold"
+            tools:text="@string/not_friday" />
+
+        <TextView
+            android:id="@android:id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="@string/is_today_friday"
+            android:textColor="#00D0D1"
+            android:textSize="33.33sp"
+            android:textStyle="bold"
+            tools:text="還有 1 天" />
+
+    </LinearLayout>
+
+</RelativeLayout>

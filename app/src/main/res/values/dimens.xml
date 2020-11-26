@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="widget_style_4_1_width">313.33dp</dimen>
+    <dimen name="widget_style_4_1_height">163.33dp</dimen>
+
+    <dimen name="widget_style_4_1_dark_title_margin_start">26.67dp</dimen>
+    <dimen name="widget_style_4_1_dark_title_margin_bottom">28dp</dimen>
+
+</resources>

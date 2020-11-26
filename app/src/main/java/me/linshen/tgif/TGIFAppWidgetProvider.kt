@@ -1,13 +1,10 @@
 package me.linshen.tgif
 
-import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
-import android.content.Intent
 import android.widget.RemoteViews
 import me.linshen.tgif.util.CalendarUtils
-import java.util.*
 
 class TGIFAppWidgetProvider : AppWidgetProvider() {
 
@@ -22,14 +19,15 @@ class TGIFAppWidgetProvider : AppWidgetProvider() {
             // to the button
             val views: RemoteViews = RemoteViews(
                 context?.packageName,
-                R.layout.widget_tgif_count_down
+                R.layout.widget_tgif_count_down_dark
             ).apply {
-                setTextViewText(
-                    android.R.id.text1, context?.getString(
-                        R.string.tgif_format,
-                        CalendarUtils.getFriCountDown()
-                    )
-                )
+                val daysLeft = CalendarUtils.getFriCountDown()
+                if (daysLeft > 0) {
+                    //还没到星期五
+                    setTextViewText(android.R.id.text1, context?.getString(R.string.not_friday))
+                    setTextViewText(android.R.id.text2, context?.getString(
+                        R.string.tgif_left_day_format, daysLeft))
+                }
             }
             // Tell the AppWidgetManager to perform an update on the current app widget
             appWidgetManager?.updateAppWidget(appWidgetId, views)
