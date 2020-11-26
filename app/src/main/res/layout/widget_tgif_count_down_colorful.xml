@@ -5,33 +5,31 @@
     android:id="@android:id/background"
     android:layout_width="match_parent"
     android:layout_height="@dimen/widget_style_4_1_height"
-    android:background="@drawable/widget_bg_dark"
+    android:background="@drawable/widget_bg_colorful"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:src="@drawable/ic_style_dark_circle" />
-
-    <LinearLayout
+    <TextView
+        android:id="@android:id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_centerInParent="true"
         android:layout_marginStart="@dimen/widget_style_4_1_dark_title_margin_start"
         android:layout_marginLeft="@dimen/widget_style_4_1_dark_title_margin_start"
-        android:orientation="vertical">
+        android:layout_marginTop="@dimen/widget_style_4_1_dark_title_margin_start"
+        android:text="@string/is_today_friday"
+        android:textColor="@android:color/white"
+        android:textSize="13.33sp" />
 
-        <TextView
-            android:id="@android:id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/is_today_friday"
-            android:textColor="#008385"
-            android:textSize="13.33sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="@dimen/widget_style_4_1_dark_title_margin_start"
+        android:orientation="vertical">
 
         <TextView
             android:id="@android:id/text1"
@@ -39,20 +37,20 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:includeFontPadding="false"
-            tools:text="@string/not_friday"
-            android:textColor="#00D0D1"
+            android:textColor="@android:color/white"
             android:textSize="33.33sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            tools:text="@string/not_friday" />
 
         <TextView
             android:id="@android:id/text2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:includeFontPadding="false"
-            tools:text="@string/tgif_left_day_format"
-            android:textColor="#00D0D1"
+            android:textColor="@android:color/white"
             android:textSize="33.33sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            tools:text="@string/tgif_left_day_format" />
 
     </LinearLayout>
 

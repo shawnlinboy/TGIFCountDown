@@ -21,7 +21,7 @@ class TGIFWidgetProvider : AppWidgetProvider() {
             Log.e("@@@", "onReceive, action = $action")
             context?.let { ctx ->
                 val cm = ComponentName(ctx, TGIFWidgetProvider::class.java)
-                AppWidgetManager.getInstance(context).updateAppWidget(cm, generateRemoteViews(ctx))
+                AppWidgetManager.getInstance(context).updateAppWidget(cm, RemoteViewsProvider.getDarkRemoteViews(ctx))
             }
         }
     }
@@ -35,25 +35,8 @@ class TGIFWidgetProvider : AppWidgetProvider() {
         Log.e("@@@", "TGIFWidgetProvider onUpdate")
         appWidgetIds?.forEach { appWidgetId ->
             // Tell the AppWidgetManager to perform an update on the current app widget
-            appWidgetManager?.updateAppWidget(appWidgetId, generateRemoteViews(context))
+            appWidgetManager?.updateAppWidget(appWidgetId, RemoteViewsProvider.getDarkRemoteViews(context))
         }
     }
-
-    private fun generateRemoteViews(context: Context?): RemoteViews = RemoteViews(
-        context?.packageName,
-        R.layout.widget_tgif_count_down_dark
-    ).apply {
-        val daysLeft = CalendarUtils.getFriCountDown()
-        if (daysLeft > 0) {
-            //还没到星期五
-            setTextViewText(android.R.id.text1, context?.getString(R.string.not_friday))
-            setTextViewText(
-                android.R.id.text2, context?.getString(
-                    R.string.tgif_left_day_format, daysLeft
-                )
-            )
-        }
-    }
-
 
 }
